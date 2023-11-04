@@ -77,8 +77,8 @@ app.layout = html.Div(
                 dcc.Graph(
                     figure=dict(
                         data=[dict(
-                            x=[1, 2, 3, 3, 2],
-                            y=[3, 1, 2, 2, 4],
+                            x=[1, 2, 3, 4, 6, 7],
+                            y=[3, 1, 2, 5, 7 , 8],
                             type='bar'
                         )]
                     )
