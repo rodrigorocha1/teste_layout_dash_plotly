@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+    .card_teste {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        
+    
+    }
+
+    .card p {
+        font-size: 17px;
+        color: red;
+    }
+
+    .card-title {
+        font-size: 28px;
+        color: blue; 
+    }
+
+    .segunda_div { 
+   
+        margin-top: 50px;  
+        margin-left: 10px;
+        margin-right: 10px;     
+    }
+
+}
