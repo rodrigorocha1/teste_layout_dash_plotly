@@ -71,6 +71,19 @@ app.layout = html.Div(
             )
             
             
+        ),
+        dbc.Row(
+            html.Div(
+                dcc.Graph(
+                    figure=dict(
+                        data=[dict(
+                            x=[1, 2, 3, 3, 2],
+                            y=[3, 1, 2, 2, 4],
+                            type='bar'
+                        )]
+                    )
+                )
+            )
         )
     ]
 )
