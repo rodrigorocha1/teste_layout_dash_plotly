@@ -7,8 +7,10 @@ import plotly.express as px
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
+n = 300  # Número de amostras
+r = 80  # Razão
 
-valores = [i * 25 for i in range(1, 50)]
+valores = [i * 25 for i in range(1, n)]
 
 
 def gerar_tabela():
@@ -129,7 +131,7 @@ app.layout = html.Div(
                         #     },
 
                         # },
-                        style={'height': '3000px'}
+                        style={'height': f'{n * r}px'}
                     ),
                     md=6
                 ),
@@ -157,7 +159,7 @@ app.layout = html.Div(
                         #     },
 
                         # },
-                        style={'height': '3000px'}
+                        style={'height': f'{n * r}px'}
                     ),
                     md=6
                 ),
