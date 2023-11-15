@@ -1,10 +1,13 @@
 import dash_bootstrap_components as dbc
-from dash import html
+from dash import html, dcc
 import dash
-
+import plotly.graph_objects as go
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
+
+
+valores = [i * 25 for i in range(1, 20)]
 
 
 def gerar_tabela():
@@ -84,6 +87,34 @@ app.layout = html.Div(
             ),
             id='id_quarta_linha',
             className='class_quarta_linha'
+        ),
+        dbc.Row(
+            dcc.Graph(
+                id='grafico-de-barras',
+
+
+                figure={
+                    'data': [
+                        {'x': valores, 'y': [
+                            f'Barras {i+1}' for i in range(len(valores))],
+                            'type': 'bar',
+                            'orientation': 'h',
+                            'width': 0.9,
+                            'bargap': 0.001,
+                            'bargroupgap': 0.009
+                         },
+                    ],
+                    'layout': {
+                        'title': 'Gráfico de Barras Horizontais',
+                        'yaxis': {'tickfont': {'size': 14}},
+                        'margin': {'l': 150, 'r': 10, 't': 30, 'b': 50}
+
+                    },
+
+                },
+                style={'height': '800px'}
+            ), className='class_grafico',
+            style={'height': '800px'}
         )
     ]
 )

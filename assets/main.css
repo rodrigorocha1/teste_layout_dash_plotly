@@ -33,3 +33,10 @@
     overflow-y: scroll;
     max-height: 300px
 }
+
+.class_grafico {
+    margin: 10px;
+    overflow-y: scroll;
+    max-height: 600px;
+
+}
