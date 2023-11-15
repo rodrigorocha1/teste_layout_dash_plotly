@@ -7,7 +7,7 @@ import plotly.express as px
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
-n = 300  # Número de amostras
+n = 50  # Número de amostras
 r = 80  # Razão
 
 valores = [i * 25 for i in range(1, n)]
@@ -31,7 +31,7 @@ fig = px.bar(
     x=valores,
     y=[f'Barras {i}' for i in range(len(valores))],
     orientation='h',
-    width=10,
+    width=20,
     text=valores,  # Adicione os valores como texto dentro das barras
 )
 
