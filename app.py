@@ -2,6 +2,7 @@ import dash_bootstrap_components as dbc
 from dash import html, dcc
 import dash
 import plotly.graph_objects as go
+import plotly.express as px
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
@@ -23,6 +24,20 @@ def gerar_tabela():
 
     return table
 
+
+fig = px.bar(
+    x=valores,
+    y=[f'Barras {i}' for i in range(len(valores))],
+    orientation='h',
+    width=10,
+    text=valores,  # Adicione os valores como texto dentro das barras
+)
+
+fig.update_layout(
+    title='Gráfico de Barras Horizontais',
+    yaxis=dict(tickfont=dict(size=15), automargin=True),
+    margin=dict(l=150, r=10, t=30, b=50),
+)
 
 app.layout = html.Div(
     [
@@ -91,27 +106,27 @@ app.layout = html.Div(
         dbc.Row(
             dcc.Graph(
                 id='grafico-de-barras',
+                figure=fig,
 
+                # figure={
+                #     'data': [
+                #         {'x': valores, 'y': [
+                #             f'Barras {i} <br>' for i in range(len(valores))],
+                #             'type': 'bar',
+                #             'orientation': 'h',
+                #             'width': 0.9,
+                #             'bargap': 0.001,
+                #             'bargroupgap': 0.009
+                #          },
+                #     ],
+                #     'layout': {
+                #         'title': 'Gráfico de Barras Horizontais',
+                #         'yaxis': {'tickfont': {'size': 10}, 'automargin': True},
+                #         'margin': {'l': 150, 'r': 10, 't': 30, 'b': 50}
 
-                figure={
-                    'data': [
-                        {'x': valores, 'y': [
-                            f'Barras {i+1}' for i in range(len(valores))],
-                            'type': 'bar',
-                            'orientation': 'h',
-                            'width': 0.9,
-                            'bargap': 0.001,
-                            'bargroupgap': 0.009
-                         },
-                    ],
-                    'layout': {
-                        'title': 'Gráfico de Barras Horizontais',
-                        'yaxis': {'tickfont': {'size': 14}},
-                        'margin': {'l': 150, 'r': 10, 't': 30, 'b': 50}
+                #     },
 
-                    },
-
-                },
+                # },
                 style={'height': '800px'}
             ), className='class_grafico',
             style={'height': '800px'}
