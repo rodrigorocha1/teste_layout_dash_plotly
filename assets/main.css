@@ -5,8 +5,8 @@
         grid-template-rows: repeat(2, 1fr);
         grid-column-gap: 10px;
         grid-row-gap: 10px;
-        
-    
+
+
     }
 
     .card p {
@@ -16,14 +16,20 @@
 
     .card-title {
         font-size: 28px;
-        color: blue; 
+        color: blue;
     }
 
-    .segunda_div { 
-   
-        margin-top: 50px;  
+    .segunda_div {
+
+        margin-top: 50px;
         margin-left: 10px;
-        margin-right: 10px;     
+        margin-right: 10px;
     }
 
+}
+
+.class_quarta_linha {
+    margin: 10px;
+    overflow-y: scroll;
+    max-height: 300px
 }
