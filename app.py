@@ -104,31 +104,65 @@ app.layout = html.Div(
             className='class_quarta_linha'
         ),
         dbc.Row(
-            dcc.Graph(
-                id='grafico-de-barras',
-                figure=fig,
+            [
+                dbc.Col(
+                    dcc.Graph(
+                        id='grafico-de-barras',
+                        figure=fig,
 
-                # figure={
-                #     'data': [
-                #         {'x': valores, 'y': [
-                #             f'Barras {i} <br>' for i in range(len(valores))],
-                #             'type': 'bar',
-                #             'orientation': 'h',
-                #             'width': 0.9,
-                #             'bargap': 0.001,
-                #             'bargroupgap': 0.009
-                #          },
-                #     ],
-                #     'layout': {
-                #         'title': 'Gráfico de Barras Horizontais',
-                #         'yaxis': {'tickfont': {'size': 10}, 'automargin': True},
-                #         'margin': {'l': 150, 'r': 10, 't': 30, 'b': 50}
+                        # figure={
+                        #     'data': [
+                        #         {'x': valores, 'y': [
+                        #             f'Barras {i} <br>' for i in range(len(valores))],
+                        #             'type': 'bar',
+                        #             'orientation': 'h',
+                        #             'width': 0.9,
+                        #             'bargap': 0.001,
+                        #             'bargroupgap': 0.009
+                        #          },
+                        #     ],
+                        #     'layout': {
+                        #         'title': 'Gráfico de Barras Horizontais',
+                        #         'yaxis': {'tickfont': {'size': 10}, 'automargin': True},
+                        #         'margin': {'l': 150, 'r': 10, 't': 30, 'b': 50}
 
-                #     },
+                        #     },
 
-                # },
-                style={'height': '3000px'}
-            ), className='class_grafico',
+                        # },
+                        style={'height': '3000px'}
+                    ),
+                    md=6
+                ),
+                dbc.Col(
+                    dcc.Graph(
+                        id='grafico-de-barras',
+                        figure=fig,
+
+                        # figure={
+                        #     'data': [
+                        #         {'x': valores, 'y': [
+                        #             f'Barras {i} <br>' for i in range(len(valores))],
+                        #             'type': 'bar',
+                        #             'orientation': 'h',
+                        #             'width': 0.9,
+                        #             'bargap': 0.001,
+                        #             'bargroupgap': 0.009
+                        #          },
+                        #     ],
+                        #     'layout': {
+                        #         'title': 'Gráfico de Barras Horizontais',
+                        #         'yaxis': {'tickfont': {'size': 10}, 'automargin': True},
+                        #         'margin': {'l': 150, 'r': 10, 't': 30, 'b': 50}
+
+                        #     },
+
+                        # },
+                        style={'height': '3000px'}
+                    ),
+                    md=6
+                ),
+            ],
+            className='class_grafico',
             style={'height': '800px'}
         )
     ]
