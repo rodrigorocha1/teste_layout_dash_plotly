@@ -8,7 +8,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
 
-valores = [i * 25 for i in range(1, 20)]
+valores = [i * 25 for i in range(1, 50)]
 
 
 def gerar_tabela():
@@ -127,7 +127,7 @@ app.layout = html.Div(
                 #     },
 
                 # },
-                style={'height': '800px'}
+                style={'height': '3000px'}
             ), className='class_grafico',
             style={'height': '800px'}
         )
